@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title> Courses API Demo </title>
+		<!-- Need to fix the handlebars link below -->
+		<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+		<script src="displayLogic.js"></script>
+	</head>
+
+	<body>
+		<h1> Welcome to my final project </h1>
+		<form onsubmit="return false;" id="queryForm">
+			<label for="nameQuery">Search by name:</label><br>
+			<input type="text" id="nameQuery" name="nameQuery" value=""><br>
+			<input id="queryByName" type="button" onclick="updateView(this)" value="Query" data-querytype="by_instructor">
+		</form>
+		<div id="results"></div>
+	</body>
+</html>
+
+<script id="show_results_view" type="text/x-handlebars-template">
+	<ul>
+		{{#each courses}}
+			<li> course_code: {{this.course_code}} | course_level : {{this.course_level}} | title : {{this.title}} | instructor : {{this.instructor}} </li>
+		{{/each}}
+	</ul>
+</script>
