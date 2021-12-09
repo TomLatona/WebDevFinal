@@ -12,5 +12,9 @@ app.use('/api', api_routes);
 //serve static front-end
 app.use('/demo', express.static('front_end'));
 
+app.get("", (req, res) => {
+	res.send("hello world");
+});
+
 //start server
 app.listen(port, () => console.log(`App running on port ${port}`));
