@@ -59,6 +59,23 @@ app.get('/api/by_instructor/:qname', (req, res) => {
 	res.json(outputJSON);
 })
 
+app.get('/api/by_nameAndLevel/:xname/:xlevel', (req, res) => {
+	let xxname = req.params['xname']
+	let xxlevel = req.params['xlevel']
+	filtered_courses = course["courses"].filter(
+		q => {
+			if ((q.instructor.includes(xxname) && q.course_level.includes(xxlevel))) {
+				return true;
+			}
+			return false;
+		}
+	);
+	let outputJSON = {
+		courses : filtered_courses
+	}
+	res.json(outputJSON);
+})
+
 //serve static front-end
 app.use('/demo', express.static('front_end'));
 

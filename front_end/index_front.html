@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title> Courses API Demo </title>
-		<!-- Need to fix the handlebars link below -->
 		<script src='https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js'></script>
 		<script src="displayLogic.js"></script>
 		<link rel="stylesheet" href="style.css" />
@@ -13,17 +12,61 @@
 				<h1> St. John's University </h1>
 				<h1> Computer Science Department Course Info API Demo </h1>
 			</div>
-		<p> This program allows users to get info about the courses in the computer science department here at St. John's by utilizing an API. This restful API acts as a middle man between the back-end database which holds all of the data, so that it can be easily transmitted to a program like this one. With different functions to return specific things based on what the user is looking for. </p>
+			<p> This program allows users to get info about the courses in the computer science department here at St. John's by utilizing an API. This restful API acts as a middle man between the back-end database which holds all of the data, so that it can be easily transmitted to a program like this one. With different functions to return specific things based on what the user is looking for. </p>
 
-		<p> This type of service could be very beneficial as it allows the info about our programs to be used more broadly on third party applications, and can help build even further the graduate as well as undergraduate programs. </p>
+			<p> This type of service could be very beneficial as it allows the info about our programs to be used more broadly on third party applications, and can help build even further the graduate as well as undergraduate programs. </p>
+			<hr>
+			<h2> Try the searches below to see info about our courses! </h2>
 		</div>
 
+		<!-- Search by name -->
 		<form onsubmit="return false;" id="queryForm">
-			<label for="nameQuery">Search by name:</label><br>
-			<input type="text" id="nameQuery" name="nameQuery" value=""><br>
+			<label for="nameQuery">Search by name:</label>
+			<input type="text" id="nameQuery" name="nameQuery" value="">
 			<input id="queryByName" type="button" onclick="updateView(this)" value="Query" data-querytype="by_instructor">
 		</form>
-		<div id="results"></div>
+		<div id="nameResults"></div>
+		<hr>
+
+		<!-- Search by course code -->
+		<form onsubmit="return false;" id="queryForm">
+			<label for="codeQuery">Search by course code:</label>
+			<input type="text" id="codeQuery" name="codeQuery" value="">
+			<input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="by_code">
+		</form>
+		<div id="codeResults"></div>
+		<hr>
+
+		<!-- Search by title -->
+		<form onsubmit="return false;" id="queryForm">
+			<label for="titleQuery">Search by course title:</label>
+			<input type="text" id="titleQuery" name="titleQuery" value="">
+			<input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_title">
+		</form>
+		<div id="titleResults"></div>
+		<hr>
+
+		<!-- Search by level -->
+		<form onsubmit="return false;" id="queryForm">
+			<label for="levelQuery">Search by course level (Graduate or Undergraduate):</label>
+			<input type="text" id="levelQuery" name="levelQuery" value="">
+			<input id="queryByLevel" type="button" onclick="updateView(this)" value="Query" data-querytype="by_level">
+		</form>
+		<div id="levelResults"></div>
+		<hr>
+
+		<!-- Search by instructor name and course level -->
+		<form onsubmit="return false;" id="queryForm">
+			<label for="nameAndLevelQuery">Search by instructor name and course level:</label><br>
+			<input type="text" id="xnameQuery" name="xnameQuery" value="Enter name here...">
+			<input type="text" id="xlevelQuery" name="xlevelQuery" value="Enter level here...">
+			<input id="queryByNameAndLevel" type="button" onclick="updateView(this)" value="Query" data-querytype="by_nameAndLevel">
+		</form>
+		<!-- Prints the output under course-code section for some reason -->
+		<div id="nameAndLevelResults"></div>
+		<hr>
+
+
 	</body>
 </html>
 
