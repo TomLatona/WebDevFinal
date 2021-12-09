@@ -3,12 +3,48 @@
 }
 
 h1 {
-	background-color: grey;
 	text-align: center;
-	text-shadow: red;
-	color: blue;
+	font-size: 50px;
+	
 }
 
 p {
 	text-align: center;
+	margin-right: 400px;
+	margin-left: 400px;
+}
+
+#heading {
+	background-color: #525252;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #CC3717;
+	text-shadow: black;
+}
+
+#forms-section {
+	background-color: white;
+	text-align: left;
+	margin-left: 350px;
+	margin-right: 350px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#formsBackground {
+	background-color: grey;
+}
+
+#bottom-bar {
+	background-color: #525252;
+	color: #CC3717;
+	text-align: center;
+}
+
+#description {
+	text-align: center;
+	margin-right: 400px;
+	margin-left: 400px;
+	padding-bottom: 25px;
+	padding-top: 25px;
 }

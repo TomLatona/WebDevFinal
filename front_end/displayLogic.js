@@ -37,7 +37,7 @@ var updateView = async (button) => {
 		api = `http://localhost:3000/api/by_nameAndLevel/${xnameQ}/${xlevelQ}`;
 		const data = await fetch(api);
 		const model = await data.json();
-		render_view_code(model);
+		render_view_nameAndLevel(model);
 	}
 }
 
@@ -77,8 +77,7 @@ var render_view_nameAndLevel = (model) => {
 }
 
 //remaining to do:
-//fix bug on nameAndLevel where output prints on course-code section
-
-//style with bootstrap
 
 //deploy on heroku and netlify
+
+//make video
