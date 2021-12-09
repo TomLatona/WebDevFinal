@@ -3,8 +3,8 @@
 //initialize server
 const express = require('express');
 const app = express();
-const port = 3000;
-app.use(express.static('public'))
+const port = 5000;
+//app.use(express.static('public'))
 
 var api_routes = require('./api_routes.js');
 app.use('/api', api_routes);
