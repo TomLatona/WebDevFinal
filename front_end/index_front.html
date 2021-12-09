@@ -2,12 +2,22 @@
 	<head>
 		<title> Courses API Demo </title>
 		<!-- Need to fix the handlebars link below -->
-		<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+		<script src='https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js'></script>
 		<script src="displayLogic.js"></script>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 
 	<body>
-		<h1> Welcome to my final project </h1>
+		<div>
+			<div>
+				<h1> St. John's University </h1>
+				<h1> Computer Science Department Course Info API Demo </h1>
+			</div>
+		<p> This program allows users to get info about the courses in the computer science department here at St. John's by utilizing an API. This restful API acts as a middle man between the back-end database which holds all of the data, so that it can be easily transmitted to a program like this one. With different functions to return specific things based on what the user is looking for. </p>
+
+		<p> This type of service could be very beneficial as it allows the info about our programs to be used more broadly on third party applications, and can help build even further the graduate as well as undergraduate programs. </p>
+		</div>
+
 		<form onsubmit="return false;" id="queryForm">
 			<label for="nameQuery">Search by name:</label><br>
 			<input type="text" id="nameQuery" name="nameQuery" value=""><br>

@@ -1,8 +1,10 @@
 //node api
 
 //initialize server
-var express = require("express");
-var app = express();
+const express = require('express');
+const app = express();
+const port = 3000;
+app.use(express.static('public'))
 
 //initialize json db
 const fs = require('fs')
@@ -10,7 +12,7 @@ let rawdata = fs.readFileSync('./courses.json');
 let course = JSON.parse(rawdata);
 
 //define routes
-app.get('/', (rew, res) => {
+app.get('/', (req, res) => {
 	res.send('<h1> Final Project </h1>')
 })
 
@@ -61,5 +63,4 @@ app.get('/api/by_instructor/:qname', (req, res) => {
 app.use('/demo', express.static('front_end'));
 
 //start server
-const port = 3000;
-app.listen(port, () => console.log("Server is running on port ${port}"));
+app.listen(port, () => console.log(`App running on port ${port}`));

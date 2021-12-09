@@ -4,10 +4,9 @@
 var updateView = async (button) => {
 	if(button.dataset.querytype == 'by_instructor') {
 		let queryvalue = document.querySelector('#nameQuery').value;
-		api = 'http://localhost:3000/api/by_instructor/${queryvalue}';
-		//fix above: ${queryvalue} is being included in the string, 
-		//I think because handlebars not being imported properly (see index_front.html)
+		api = `http://localhost:3000/api/by_instructor/${queryvalue}`;
 	}
+
 	const data = await fetch(api);
 	const model = await data.json();
 	render_view(model);
@@ -19,3 +18,10 @@ var render_view = (model) => {
 	var html = template(model);
 	document.querySelector("#results").innerHTML = html;
 }
+
+
+//remaining to do:
+//finish styling the front end
+//implement the rest of the search functions
+//add route for search by name + level
+//deploy on heroku and netlify

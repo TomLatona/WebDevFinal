@@ -1,0 +1,14 @@
+:root {
+	background-color: silver;
+}
+
+h1 {
+	background-color: grey;
+	text-align: center;
+	text-shadow: red;
+	color: blue;
+}
+
+p {
+	text-align: center;
+}
