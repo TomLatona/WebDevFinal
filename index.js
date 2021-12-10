@@ -3,8 +3,8 @@
 //initialize server
 const express = require('express');
 const app = express();
-const port = 3000;
-//const port = process.env.PORT || 80;
+//const port = 3000;
+const port = process.env.PORT || 80;
 
 var api_routes = require('./api_routes.js');
 app.use('/api', api_routes);
