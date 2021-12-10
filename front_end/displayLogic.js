@@ -5,28 +5,28 @@ var updateView = async (button) => {
 	
 	if(button.dataset.querytype == 'by_title') {
 		let queryvalue = document.querySelector('#titleQuery').value;
-		api = `http://localhost:3000/api/by_title/${queryvalue}`;
+		api = `https://webdev-final-tomlatona.herokuapp.com/api/by_title/${queryvalue}`;
 		const data = await fetch(api);
 		const model = await data.json();
 		render_view_title(model);
 	}
 	if(button.dataset.querytype == 'by_level') {
 		let queryvalue = document.querySelector('#levelQuery').value;
-		api = `http://localhost:3000/api/by_level/${queryvalue}`;
+		api = `https://webdev-final-tomlatona.herokuapp.com/api/by_level/${queryvalue}`;
 		const data = await fetch(api);
 		const model = await data.json();
 		render_view_level(model);
 	}
 	if(button.dataset.querytype == 'by_instructor') {
 		let queryvalue = document.querySelector('#nameQuery').value;
-		api = `http://localhost:3000/api/by_instructor/${queryvalue}`;
+		api = `https://webdev-final-tomlatona.herokuapp.com/api/by_instructor/${queryvalue}`;
 		const data = await fetch(api);
 		const model = await data.json();
 		render_view_name(model);
 	}
 	if(button.dataset.querytype == 'by_code') {
 		let queryvalue = document.querySelector('#codeQuery').value;
-		api = `http://localhost:3000/api/by_code/${queryvalue}`;
+		api = `https://webdev-final-tomlatona.herokuapp.com/api/by_code/${queryvalue}`;
 		const data = await fetch(api);
 		const model = await data.json();
 		render_view_code(model);
@@ -34,7 +34,7 @@ var updateView = async (button) => {
 	if(button.dataset.querytype == 'by_nameAndLevel') {
 		let xnameQ = document.querySelector('#xnameQuery').value;
 		let xlevelQ = document.querySelector('#xlevelQuery').value;
-		api = `http://localhost:3000/api/by_nameAndLevel/${xnameQ}/${xlevelQ}`;
+		api = `https://webdev-final-tomlatona.herokuapp.com/api/by_nameAndLevel/${xnameQ}/${xlevelQ}`;
 		const data = await fetch(api);
 		const model = await data.json();
 		render_view_nameAndLevel(model);
@@ -75,9 +75,3 @@ var render_view_nameAndLevel = (model) => {
 	var html = template(model);
 	document.querySelector("#nameAndLevelResults").innerHTML = html;
 }
-
-//remaining to do:
-
-//deploy on heroku and netlify
-
-//make video
