@@ -6,6 +6,15 @@ const app = express();
 //const port = 3000;
 const port = process.env.PORT || 80;
 
+const cors = require("cors");
+const corsOptions = {
+	origin: '*',
+	credentials: true,
+	optionSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions));
+
 var api_routes = require('./api_routes.js');
 app.use('/api', api_routes);
 
@@ -21,14 +30,7 @@ app.use(express.static('front_end'));
 //     next();
 // });
 
-const cors = require("cors");
-const corsOptions = {
-	origin: '*',
-	credentials: true,
-	optionSuccessStatus: 200,
-}
 
-app.use(cors(corsOptions))
 
 //start server
 app.listen(port, () => console.log(`App running on port ${port}`));
